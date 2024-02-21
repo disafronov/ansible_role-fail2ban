@@ -1,0 +1,7 @@
+- name: Restart fail2ban service
+  ansible.builtin.systemd:
+    state: restarted
+    enabled: true
+    masked: false
+    daemon_reload: true
+    name: fail2ban.service
