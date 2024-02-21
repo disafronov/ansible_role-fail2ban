@@ -1,0 +1,6 @@
+{{ ansible_managed | comment }}
+
+[DEFAULT]
+logtarget = SYSLOG
+
+{{ fail2ban_fail2ban_local | default('') }}
