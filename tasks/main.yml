@@ -11,7 +11,7 @@
     owner: root
     group: root
     mode: "0644"
-  when: fail2ban_fail2ban_local is defined
+  when: fail2ban.fail2ban_local is defined
   notify: (Re)start fail2ban service
 
 - name: Template a file to /etc/fail2ban/jail.local
@@ -21,7 +21,7 @@
     owner: root
     group: root
     mode: "0644"
-  when: fail2ban_jail_local is defined
+  when: fail2ban.jail_local is defined
   notify: (Re)start fail2ban service
 
 - name: Configure /etc/fail2ban/fail2ban.d
