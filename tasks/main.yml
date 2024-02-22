@@ -2,7 +2,7 @@
   ansible.builtin.package:
     name: fail2ban
     state: present
-  notify: Restart fail2ban service
+  notify: (Re)start fail2ban service
 
 - name: Template a file to /etc/fail2ban/fail2ban.local
   ansible.builtin.template:
@@ -12,7 +12,7 @@
     group: root
     mode: "0644"
   when: fail2ban_fail2ban_local is defined
-  notify: Restart fail2ban service
+  notify: (Re)start fail2ban service
 
 - name: Template a file to /etc/fail2ban/jail.local
   ansible.builtin.template:
@@ -22,4 +22,4 @@
     group: root
     mode: "0644"
   when: fail2ban_jail_local is defined
-  notify: Restart fail2ban service
+  notify: (Re)start fail2ban service

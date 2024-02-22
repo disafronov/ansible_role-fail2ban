@@ -12,7 +12,7 @@
     - item.value is defined
     - item.value != None
     - item.value | length > 0
-  with_dict: "{{ fail2ban.fail2ban_d  }}"
+  with_dict: "{{ fail2ban.fail2ban_d }}"
   ansible.builtin.template:
     src: fail2ban.d.j2
     dest: "/etc/fail2ban/fail2ban.d/{{ item.key }}.conf"
