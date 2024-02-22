@@ -7,7 +7,7 @@
   with_dict: "{{ fail2ban.jail_d }}"
   no_log: true
 
-- name: Create fail2ban jail.d files
+- name: Create /etc/fail2ban/jail.d files
   when:
     - item.value is defined
     - item.value != None

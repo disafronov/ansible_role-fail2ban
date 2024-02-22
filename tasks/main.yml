@@ -23,3 +23,17 @@
     mode: "0644"
   when: fail2ban_jail_local is defined
   notify: (Re)start fail2ban service
+
+- name: Configure /etc/fail2ban/fail2ban.d
+  when:
+    - fail2ban.fail2ban_d is defined
+    - fail2ban.fail2ban_d != None
+  ansible.builtin.include_tasks:
+    file: fail2ban_d.yml
+
+- name: Configure /etc/fail2ban/jail.d
+  when:
+    - fail2ban.jail_d is defined
+    - fail2ban.jail_d != None
+  ansible.builtin.include_tasks:
+    file: jail_d.yml
