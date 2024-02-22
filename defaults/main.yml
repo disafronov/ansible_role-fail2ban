@@ -1,5 +1,0 @@
-fail2ban_fail2ban_local: |
-  loglevel = INFO
-
-fail2ban_jail_local: |
-  bantime.rndtime = 300
