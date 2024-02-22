@@ -1,0 +1,23 @@
+---
+
+- name: Fail on spaces in fail2ban fail2ban_d config names
+  ansible.builtin.assert:
+    that:
+      - "' ' not in item.key"
+  with_dict: "{{ fail2ban.fail2ban_d }}"
+  no_log: true
+
+- name: Create /etc/fail2ban/fail2ban.d files
+  when:
+    - item.value is defined
+    - item.value != None
+    - item.value | length > 0
+  with_dict: "{{ fail2ban.fail2ban_d }}"
+  ansible.builtin.template:
+    src: fail2ban.d.j2
+    dest: "/etc/fail2ban/fail2ban.d/{{ item.key }}.conf"
+    mode: "0600"
+    owner: root
+    group: root
+  no_log: true
+  notify: (Re)start fail2ban service
