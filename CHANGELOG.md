@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.0.0] - 2025-04-14
+
+### 🚀 Features
+
+- [**breaking**] Clean templates without hardcode
+
 ## [1.1.1] - 2024-11-12
 
 ### 🚜 Refactor
