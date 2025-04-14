@@ -1,6 +1,3 @@
 {{ ansible_managed | comment }}
 
-[DEFAULT]
-backend = systemd
-
 {{ fail2ban.jail_local | default('') }}
