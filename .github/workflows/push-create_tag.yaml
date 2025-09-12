@@ -13,7 +13,7 @@ jobs:
     steps:
       - name: Checkout
         if: "${{ ! startsWith(github.event.head_commit.message, 'docs: update changelog for ') }}"
-        uses: actions/checkout@v4.2.2
+        uses: actions/checkout@v5.0.0
         with:
           token: ${{ secrets.PAT }}
           fetch-depth: 0
@@ -21,7 +21,7 @@ jobs:
       - name: Get Next Version
         if: "${{ ! startsWith(github.event.head_commit.message, 'docs: update changelog for ') }}"
         id: semver
-        uses: ietf-tools/semver-action@v1.10.1
+        uses: ietf-tools/semver-action@v1.10.2
         with:
           token: ${{ github.token }}
           branch: main

@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4.2.2
+        uses: actions/checkout@v5.0.0
         with:
           token: ${{ secrets.PAT }}
           fetch-depth: 0
@@ -24,7 +24,7 @@ jobs:
           OUTPUT: .CHANGELOG.md
 
       - name: Create Release
-        uses: ncipollo/release-action@v1.16.0
+        uses: ncipollo/release-action@v1.20.0
         with:
           allowUpdates: true
           draft: false
