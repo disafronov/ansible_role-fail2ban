@@ -1,5 +1,4 @@
 ---
-
 name: Lint
 
 "on":
@@ -20,6 +19,8 @@ jobs:
   test:
     name: lint
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
 
     continue-on-error: ${{ matrix.experimental }}
     strategy:
