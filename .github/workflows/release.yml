@@ -11,6 +11,7 @@ jobs:
     name: "Release"
     runs-on: ubuntu-latest
     permissions:
+      pull-requests: write
       contents: write
     concurrency:
       group: semantic-release

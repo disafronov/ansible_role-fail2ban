@@ -1,7 +1,0 @@
-.github/
-.github/workflows/
-.github/workflows/*
-.requirements/
-.requirements/*
-update.list
-update.sh
